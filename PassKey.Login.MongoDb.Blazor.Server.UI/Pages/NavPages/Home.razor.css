@@ -1,0 +1,36 @@
+﻿.dashboard-blocks {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.dashboard-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: grey;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.dashboard-header-block {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; /* Add border to the entire block */
+    border-radius: 5px;
+}
+
+.dashboard-child {
+    flex: 1;
+    margin: 10px;
+}
+
+.dashboard-text {
+    font-size: 12px;
+}

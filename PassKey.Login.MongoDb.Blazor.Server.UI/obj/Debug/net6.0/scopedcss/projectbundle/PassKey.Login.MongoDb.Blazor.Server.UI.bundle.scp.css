@@ -1,3 +1,40 @@
+/* _content/PassKey.Login.MongoDb.Blazor.Server.UI/Pages/NavPages/Home.razor.rz.scp.css */
+.dashboard-blocks[b-b0skl1ymxj] {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.dashboard-icon[b-b0skl1ymxj] {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: grey;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.dashboard-header-block[b-b0skl1ymxj] {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; /* Add border to the entire block */
+    border-radius: 5px;
+}
+
+.dashboard-child[b-b0skl1ymxj] {
+    flex: 1;
+    margin: 10px;
+}
+
+.dashboard-text[b-b0skl1ymxj] {
+    font-size: 12px;
+}
 /* _content/PassKey.Login.MongoDb.Blazor.Server.UI/Shared/MainLayout.razor.rz.scp.css */
 .page[b-tk5888bvpd] {
     position: relative;
