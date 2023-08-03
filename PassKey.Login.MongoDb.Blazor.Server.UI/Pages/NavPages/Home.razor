@@ -1,7 +1,13 @@
 ﻿@page "/home"
+@using PassKey.Login.MongoDb.Blazor.Server.UI.Data;
+@inject PassKey.Login.MongoDb.Blazor.Server.UI.IService.IUserService userService
+@inject PassKey.Login.MongoDb.Blazor.Server.UI.IService.ICompaniesService companiesService
+@inject NavigationManager navManager
+@inject IJSRuntime jsRuntime
 
 <br />
-
+<body>
+    <main>
 <div class="dashboard-blocks">
     <div class="dashboard-header-block">
         <div class="oi oi-bell dashboard-icon"></div>
@@ -29,7 +35,52 @@
     </div>
 </div>
 <br />
-
+    </main>
+<footer>
+    <h5>@company.Name</h5>
+    <h5>@company.Address</h5>
+    <h5>@company.PhoneNumber</h5>
+</footer>
+</body>
 @code {
 
+    Users user = new Users();
+    Companies company = new Companies();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        string uniqueIdentifier = await jsRuntime.InvokeAsync<string>("localStorage.getItem", "userUniqueIdentifier");
+        user = userService.GetUser(uniqueIdentifier);
+        company = companiesService.GetCompany(user.CompanyId);
+
+    }
+
+    private void NavigateToAnotherPage()
+    {
+        navManager.NavigateTo("/users");
+    }
+    private void NavigateToCompanies()
+    {
+        navManager.NavigateTo("/companies");
+    }
+
+    private string GetGreeting()
+    {
+        var currentTime = DateTime.Now;
+
+        if (currentTime.Hour >= 5 && currentTime.Hour < 12)
+        {
+            return "morning";
+        }
+        else if (currentTime.Hour >= 12 && currentTime.Hour < 17)
+        {
+            return "afternoon";
+        }
+        else
+        {
+            return "evening";
+        }
+    }
 }

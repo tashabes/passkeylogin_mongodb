@@ -1,4 +1,19 @@
 /* _content/PassKey.Login.MongoDb.Blazor.Server.UI/Pages/NavPages/Home.razor.rz.scp.css */
+body[b-b0skl1ymxj] {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}   
+
+main[b-b0skl1ymxj] {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 .dashboard-blocks[b-b0skl1ymxj] {
     display: flex;
     justify-content: space-evenly;
@@ -35,6 +50,23 @@
 .dashboard-text[b-b0skl1ymxj] {
     font-size: 12px;
 }
+
+footer[b-b0skl1ymxj] {
+    flex-shrink: 0;
+    background-color: #333;
+    border-radius: 6px;
+    padding: 20px;
+    color: #fff;
+    font-size: 18px;
+    margin-top: auto;
+    margin-bottom: 100px;
+}
+
+    footer h4[b-b0skl1ymxj], footer h5[b-b0skl1ymxj] {
+        color: inherit;
+        font-size: inherit;
+        margin: 0;
+    }
 /* _content/PassKey.Login.MongoDb.Blazor.Server.UI/Shared/MainLayout.razor.rz.scp.css */
 .page[b-tk5888bvpd] {
     position: relative;

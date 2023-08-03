@@ -1,4 +1,19 @@
-﻿.dashboard-blocks {
+﻿body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}   
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-blocks {
     display: flex;
     justify-content: space-evenly;
     width: 90%;
@@ -34,3 +49,20 @@
 .dashboard-text {
     font-size: 12px;
 }
+
+footer {
+    flex-shrink: 0;
+    background-color: #333;
+    border-radius: 6px;
+    padding: 20px;
+    color: #fff;
+    font-size: 18px;
+    margin-top: auto;
+    margin-bottom: 100px;
+}
+
+    footer h4, footer h5 {
+        color: inherit;
+        font-size: inherit;
+        margin: 0;
+    }
