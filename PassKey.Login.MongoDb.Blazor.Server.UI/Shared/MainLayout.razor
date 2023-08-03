@@ -1,4 +1,23 @@
 ﻿@inherits LayoutComponentBase
+@using PassKey.Login.MongoDb.Blazor.Server.UI.Data
+@using PassKey.Login.MongoDb.Blazor.Server.UI.Service
+@inject PassKey.Login.MongoDb.Blazor.Server.UI.IService.IUserService userService
+@inject PassKey.Login.MongoDb.Blazor.Server.UI.IService.ICompaniesService companiesService
+@inject IJSRuntime jsRuntime
+
+<style>
+    .sidebar {
+        background-color: @company.Color   
+    }
+
+    .user-initial-circle {
+        background-color: @company.Color
+    }
+
+
+
+
+</style>
 
 <PageTitle>PassKey.Login.MongoDb.Blazor.Server.UI</PageTitle>
 
@@ -9,7 +28,9 @@
 
     <main>
         <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+            @if(user!=null){
+            <h3>Good @GetGreeting(), @user.Name <span class="user-initial-circle">@userInitial</span></h3>
+            }
         </div>
 
         <article class="content px-4">
@@ -17,5 +38,50 @@
         </article>
     </main>
 </div>
+
+@code
+{
+    Users user = new Users();
+    Companies company = new Companies();
+    bool isLoaded = false; // Track whether data has been loaded.
+    string userInitial;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        // Check if it's the first render and the data is not loaded yet.
+        if (firstRender && !isLoaded)
+        {
+            string uniqueIdentifier = await jsRuntime.InvokeAsync<string>("localStorage.getItem", "userUniqueIdentifier");
+            user = userService.GetUser(uniqueIdentifier);
+            if (user != null)
+            {
+                userInitial = user.Name.Substring(0, 1);
+                company = companiesService.GetCompany(user.CompanyId);
+            }
+            // Mark the data as loaded to prevent subsequent calls.
+            isLoaded = true;
+
+            // Re-render the component to update the UI with the loaded data.
+            StateHasChanged();
+        }
+    }
+    private string GetGreeting()
+    {
+        var currentTime = DateTime.Now;
+
+        if (currentTime.Hour >= 5 && currentTime.Hour < 12)
+        {
+            return "morning";
+        }
+        else if (currentTime.Hour >= 12 && currentTime.Hour < 17)
+        {
+            return "afternoon";
+        }
+        else
+        {
+            return "evening";
+        }
+    }
+}
 
 

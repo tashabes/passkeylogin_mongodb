@@ -1,4 +1,12 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@using PassKey.Login.MongoDb.Blazor.Server.UI.Data
+@using PassKey.Login.MongoDb.Blazor.Server.UI.Service
+@inject PassKey.Login.MongoDb.Blazor.Server.UI.IService.IUserService userService
+@inject PassKey.Login.MongoDb.Blazor.Server.UI.IService.ICompaniesService companiesService
+@inject IJSRuntime jsRuntime
+
+
+
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href=""></a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -38,8 +46,28 @@
 </div>
 
 @code {
+    Users user = new Users();
+    Companies company = new Companies();
+    bool isLoaded = false; // Track whether data has been loaded.
 
-    
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        // Check if it's the first render and the data is not loaded yet.
+        if (firstRender && !isLoaded)
+        {
+            string uniqueIdentifier = await jsRuntime.InvokeAsync<string>("localStorage.getItem", "userUniqueIdentifier");
+            user = userService.GetUser(uniqueIdentifier);
+            if (user != null)
+            {
+                company = companiesService.GetCompany(user.CompanyId);
+            }
+            // Mark the data as loaded to prevent subsequent calls.
+            isLoaded = true;
+
+            // Re-render the component to update the UI with the loaded data.
+            StateHasChanged();
+        }
+    }
 
     private bool collapseNavMenu = true;
 
