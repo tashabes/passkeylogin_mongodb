@@ -1,9 +1,22 @@
 ﻿@page "/"
+@inject NavigationManager navManager
+@inject IJSRuntime jsRuntime
 
-<PageTitle>Index</PageTitle>
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+            string uniqueIdentifier = await jsRuntime.InvokeAsync<string>("localStorage.getItem", "userUniqueIdentifier");
+            if (!string.IsNullOrEmpty(uniqueIdentifier))
+            {
+                navManager.NavigateTo("/home");
+            }
+            else
+            {
+                navManager.NavigateTo("/register");
+            }
+        }
+    }
+    }

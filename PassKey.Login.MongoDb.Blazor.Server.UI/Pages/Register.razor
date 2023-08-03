@@ -1,0 +1,143 @@
+﻿@page "/register"
+@using PassKey.Login.MongoDb.Blazor.Server.UI.Data
+@using PassKey.Login.MongoDb.Blazor.Server.UI.Service
+@inject PassKey.Login.MongoDb.Blazor.Server.UI.IService.IUserService userService
+@inject PassKey.Login.MongoDb.Blazor.Server.UI.IService.ICompaniesService companiesService
+@inject IJSRuntime jsRuntime
+@inject NavigationManager navManager
+
+
+
+<h3>Register</h3>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Name:</label>
+            </div>
+            <div class="col-md-8">
+                <input @bind="User.Name" style="width:100%;" placeholder="Name" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Phone Number:</label>
+            </div>
+            <div class="col-md-8">
+                <input @bind="User.PhoneNumber" style="width:100%;" placeholder="Phone Number" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Company:</label>
+            </div>
+            <div class="col-md-8">
+                <select @bind="User.CompanyId" style="width:100%;">
+                    <option value="">Select a Company</option>
+                    @foreach (var company in Companies)
+                    {
+                        <option value="@company.Id">@company.Name</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+
+        <br />
+
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-8">
+                <button class="btn btn-primary" @onclick="@(e => SaveAsync())">Save</button>
+
+                <button class="btn btn-danger" @onclick="@(e => Reset())" style="float:right;">Reset</button>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+@code {
+
+    Users User = new Users();
+    Companies Company = new Companies();
+    List<Users> Users = new List<Users>();
+    List<Companies> Companies = new List<Companies>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        GetUsers();
+        await GetCompanies();
+    }
+    private void GetUsers()
+    {
+        Users = userService.GetUsers();
+    }
+    private async Task GetCompanies()
+    {
+        Companies = companiesService.GetCompanies();
+    }
+    //public Companies GetCompany(string id)
+    //{
+    //    return _companyTable.Find(x => x.Id == id).FirstOrDefault();
+    //}
+
+    private async Task SaveAsync()
+    {
+        User.SystemDetail = await jsRuntime.InvokeAsync<string>("getUserAgent");
+        User.OperatingSystem = await jsRuntime.InvokeAsync<string>("getClientOS");
+        User.UniqueIdentifier = await jsRuntime.InvokeAsync<string>("uuidInterop.getUUID");
+        await jsRuntime.InvokeVoidAsync("localStorage.setItem", "userUniqueIdentifier", User.UniqueIdentifier);
+        User.IPAddress = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
+        Company = companiesService.GetCompany(User.CompanyId);
+        User.CompanyName = Company.Name;
+        bool containsMac = User.SystemDetail.Contains("Macintosh");
+        bool containsWindows = User.SystemDetail.Contains("Windows");
+        bool containsAndroid = User.SystemDetail.Contains("Android");
+        bool containsiOS = User.SystemDetail.Contains("iPhone");
+
+        if (containsWindows)
+        {
+            User.System = "Windows";
+
+        }
+        else if (containsMac)
+        {
+            User.System = "macOS";
+
+        }
+        else if (containsAndroid)
+        {
+            User.System = "Android";
+
+        }
+        else if (containsiOS)
+        {
+            User.System = "iOS";
+        }
+
+        userService.SaveOrUpdate(User);
+        Reset();
+        GetUsers();
+        navManager.NavigateTo("/home");
+    }
+    private void Reset()
+    {
+        User = new Users();
+    }
+    //private void Edit(string userId)
+    //{
+    //    User = userService.GetUser(userId);
+    //}
+    private void Delete(string userId)
+    {
+        userService.Delete(userId);
+        GetUsers();
+    }
+
+
+}
