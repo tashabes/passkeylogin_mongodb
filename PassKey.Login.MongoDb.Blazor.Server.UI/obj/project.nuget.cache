@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "mGDmuDP/U09oQGVei+DBD0h12RKRGk9zK4Jw1VFWUjAP9Jqg+D7PTEuxExl4zGny+Z+ZHm3Ribh8ktf2H1pHTw==",
+  "dgSpecHash": "76iUENCSzCo9jmXhyw3AZLgaAs2twlp0t6y4NzX4UJwOTs38RpeBijBttjR++C3/fYjGmVWUHSLiBPfTnYfTJw==",
   "success": true,
   "projectFilePath": "C:\\Users\\NatashaAbel\\source\\repos\\PassKey.Login.MongoDb\\PassKey.Login.MongoDb.Blazor.Server.UI\\PassKey.Login.MongoDb.Blazor.Server.UI.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\NatashaAbel\\.nuget\\packages\\mongodb.bson\\2.20.0\\mongodb.bson.2.20.0.nupkg.sha512",
+    "C:\\Users\\NatashaAbel\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

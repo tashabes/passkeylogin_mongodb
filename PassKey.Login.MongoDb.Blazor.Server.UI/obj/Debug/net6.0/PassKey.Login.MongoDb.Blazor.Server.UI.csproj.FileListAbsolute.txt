@@ -30,3 +30,5 @@ C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Bl
 C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\obj\Debug\net6.0\PassKey.Login.MongoDb.Blazor.Server.UI.pdb
 C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\obj\Debug\net6.0\PassKey.Login.MongoDb.Blazor.Server.UI.genruntimeconfig.cache
 C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\obj\Debug\net6.0\ref\PassKey.Login.MongoDb.Blazor.Server.UI.dll
+C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\bin\Debug\net6.0\MongoDB.Bson.dll
+C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\obj\Debug\net6.0\PassKey.Login.MongoDb.Blazor.Server.UI.csproj.CopyComplete
