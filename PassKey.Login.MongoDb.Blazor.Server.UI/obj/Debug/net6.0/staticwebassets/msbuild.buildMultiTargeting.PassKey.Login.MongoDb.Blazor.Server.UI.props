@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PassKey.Login.MongoDb.Blazor.Server.UI.props" />
+</Project>
