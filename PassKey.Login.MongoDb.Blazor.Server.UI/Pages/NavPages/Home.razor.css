@@ -24,7 +24,6 @@ main {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: grey;
     color: #fff;
     font-size: 20px;
     text-align: center;
@@ -52,7 +51,6 @@ main {
 
 footer {
     flex-shrink: 0;
-    background-color: #333;
     border-radius: 6px;
     padding: 20px;
     color: #fff;
