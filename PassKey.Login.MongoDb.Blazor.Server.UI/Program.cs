@@ -1,12 +1,15 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-
+using PassKey.Login.MongoDb.Blazor.Server.UI.IService;
+using PassKey.Login.MongoDb.Blazor.Server.UI.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ICompaniesService, CompaniesService>();
 
 
 var app = builder.Build();

@@ -32,3 +32,15 @@ C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Bl
 C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\obj\Debug\net6.0\ref\PassKey.Login.MongoDb.Blazor.Server.UI.dll
 C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\bin\Debug\net6.0\MongoDB.Bson.dll
 C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\obj\Debug\net6.0\PassKey.Login.MongoDb.Blazor.Server.UI.csproj.CopyComplete
+C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\bin\Debug\net6.0\AWSSDK.Core.dll
+C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\bin\Debug\net6.0\AWSSDK.SecurityToken.dll
+C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\bin\Debug\net6.0\DnsClient.dll
+C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\bin\Debug\net6.0\MongoDB.Driver.dll
+C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\bin\Debug\net6.0\MongoDB.Driver.Core.dll
+C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\bin\Debug\net6.0\MongoDB.Libmongocrypt.dll
+C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\bin\Debug\net6.0\SharpCompress.dll
+C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\bin\Debug\net6.0\Snappier.dll
+C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\bin\Debug\net6.0\ZstdSharp.dll
+C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
