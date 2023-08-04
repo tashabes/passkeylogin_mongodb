@@ -1,0 +1,36 @@
+﻿@using PassKey.Login.MongoDb.Blazor.Server.UI.Data
+@using PassKey.Login.MongoDb.Blazor.Server.UI.Service
+@inject PassKey.Login.MongoDb.Blazor.Server.UI.IService.IUserService userService
+@inject PassKey.Login.MongoDb.Blazor.Server.UI.IService.ICompaniesService companiesService
+@inject IJSRuntime jsRuntime
+
+
+<h3>Hours billed</h3>
+<SfChart>
+    <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category">
+        
+    </ChartPrimaryXAxis>
+    <ChartSeriesCollection>
+        <ChartSeries DataSource="@Hours" XName="Month" YName="SalesValue" Type="ChartSeriesType.Column">
+        </ChartSeries>
+    </ChartSeriesCollection>
+</SfChart>
+
+@code {
+    public class SalesInfo
+    {
+        public string Month { get; set; }
+        public double SalesValue { get; set; }
+    }
+
+    public List<SalesInfo> Hours = new List<SalesInfo>
+    {
+        new SalesInfo { Month = "Jan", SalesValue = 40 },
+        new SalesInfo { Month = "Feb", SalesValue = 41},
+        new SalesInfo { Month = "Mar", SalesValue = 33 },
+        new SalesInfo { Month = "Apr", SalesValue = 45 },
+        new SalesInfo { Month = "May", SalesValue = 46 },
+        new SalesInfo { Month = "Jun", SalesValue = 40 },
+        new SalesInfo { Month = "Jul", SalesValue = 50 }
+    };
+}

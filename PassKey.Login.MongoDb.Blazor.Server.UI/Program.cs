@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using PassKey.Login.MongoDb.Blazor.Server.UI.IService;
 using PassKey.Login.MongoDb.Blazor.Server.UI.Service;
+using Syncfusion.Blazor;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,9 +11,11 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICompaniesService, CompaniesService>();
+builder.Services.AddSyncfusionBlazor();
 
 
 var app = builder.Build();
+Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NGaF1cWGhBYVJ3WmFZfV1gdVdMZV1bRHRPIiBoS35RdUVrWXtfcnFURmJVVEVz");
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

@@ -46,6 +46,18 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Chart.js": {
+              "target": "Package",
+              "version": "[3.7.1, )"
+            },
+            "ChartJs.Blazor": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "ChartJs.Blazor.Fork": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            },
             "MongoDB.Bson": {
               "target": "Package",
               "version": "[2.20.0, )"
@@ -53,6 +65,10 @@
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.20.0, )"
+            },
+            "Syncfusion.Blazor.Charts": {
+              "target": "Package",
+              "version": "[22.2.7, )"
             }
           },
           "imports": [

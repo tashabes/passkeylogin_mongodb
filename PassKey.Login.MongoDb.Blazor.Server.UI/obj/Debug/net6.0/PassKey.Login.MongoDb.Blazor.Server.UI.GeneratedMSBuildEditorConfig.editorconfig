@@ -28,6 +28,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2UGFnZXNcRXhwZW5zZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/NatashaAbel/source/repos/PassKey.Login.MongoDb/PassKey.Login.MongoDb.Blazor.Server.UI/Pages/NavPages/Graph.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2UGFnZXNcR3JhcGgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/NatashaAbel/source/repos/PassKey.Login.MongoDb/PassKey.Login.MongoDb.Blazor.Server.UI/Pages/NavPages/MyAccount.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2UGFnZXNcTXlBY2NvdW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
