@@ -64,3 +64,13 @@ footer {
         font-size: inherit;
         margin: 0;
     }
+
+    .bold 
+    {
+        font-weight: bold;
+    }
+
+    a {
+        color: black;
+    
+    }

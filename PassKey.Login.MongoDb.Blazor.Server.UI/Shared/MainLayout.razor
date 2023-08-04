@@ -28,8 +28,10 @@
 
     <main>
         <div class="top-row px-4">
+            <h5>@DateTime.Now.ToString("D")</h5>
             @if(user!=null){
-            <h3>Good @GetGreeting(), @user.Name <span class="user-initial-circle">@userInitial</span></h3>
+
+            <h4>Good @GetGreeting(), @user.Name <span class="user-initial-circle">@userInitial</span></h4>
             }
         </div>
 
