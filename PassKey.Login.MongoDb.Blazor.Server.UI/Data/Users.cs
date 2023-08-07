@@ -29,5 +29,6 @@ namespace PassKey.Login.MongoDb.Blazor.Server.UI.Data
 
         public string CompanyId { get; set; }
 
+        public string GroupId { get; set; }
     }
 }
