@@ -13,7 +13,7 @@ main[b-tk5888bvpd] {
 }
 
 .top-row[b-tk5888bvpd] {
-    background-color: #f7f7f7;
+    /*background-color: #f7f7f7;*/
     border-bottom: 1px solid #d6d5d5;
     justify-content: space-between;
     height: 3.5rem;
