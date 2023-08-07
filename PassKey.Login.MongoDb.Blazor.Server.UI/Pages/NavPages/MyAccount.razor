@@ -1,7 +1,45 @@
 ﻿@page "/myaccount"
+@using PassKey.Login.MongoDb.Blazor.Server.UI.Data
+@using PassKey.Login.MongoDb.Blazor.Server.UI.Service
+@inject PassKey.Login.MongoDb.Blazor.Server.UI.IService.IUserService userService
+@inject IJSRuntime jsRuntime
 
-<h3>MyAccount</h3>
+<h3>My Account</h3>
+
+<div class="row">
+    <div class="col-md-12">
+        @if (User != null)
+        {
+                <h4>Users with GroupID: @User.GroupID</h4>
+                <ul>
+                @foreach (var use in Users)
+                {
+                            <li>@use.Name - @use.System</li>
+                }
+                </ul>
+        }
+        else
+        {
+                <p>No users found with this GroupID.</p>
+        }
+    </div>
+</div>
 
 @code {
+    List<Users> Users = new List<Users>();
+    Users User = new Users();
 
+   
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        string uniqueIdentifier = await jsRuntime.InvokeAsync<string>("localStorage.getItem", "userUniqueIdentifier");
+        User = userService.GetUser(uniqueIdentifier);
+        Users = userService.GetUsersByGroupID(User.GroupID);
+
+    }
+
+   
 }
+

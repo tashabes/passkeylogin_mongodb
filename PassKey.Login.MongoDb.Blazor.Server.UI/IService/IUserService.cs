@@ -12,6 +12,8 @@ namespace PassKey.Login.MongoDb.Blazor.Server.UI.IService
 
         List<Users> GetUsers();
 
+        List<Users> GetUsersByGroupID(string groupId);
+
         string Delete(string userId);
     }
 }

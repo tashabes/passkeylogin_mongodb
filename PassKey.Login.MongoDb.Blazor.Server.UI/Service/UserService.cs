@@ -51,6 +51,13 @@ namespace PassKey.Login.MongoDb.Blazor.Server.UI.Service
             return _userTable.Find(FilterDefinition<Users>.Empty).ToList();
         }
 
+        public List<Users> GetUsersByGroupID(string groupID)
+        {
+            return _userTable.Find(x => x.GroupID == groupID).ToList();
+        }
+
+        
+
         public void SaveOrUpdate(Users user)
         {
             var studentObj = _userTable.Find(x => x.Id == user.Id).FirstOrDefault();
