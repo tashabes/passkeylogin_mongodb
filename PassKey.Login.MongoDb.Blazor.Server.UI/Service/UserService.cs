@@ -40,6 +40,11 @@ namespace PassKey.Login.MongoDb.Blazor.Server.UI.Service
             return _userTable.Find(x => x.UniqueIdentifier == uniqueIdentifier).FirstOrDefault();
         }
 
+        public Users GetUserByPhone(string phoneNumber)
+        {
+            return _userTable.Find(x => x.PhoneNumber == phoneNumber).FirstOrDefault();
+        }
+
 
         public List<Users> GetUsers()
         {

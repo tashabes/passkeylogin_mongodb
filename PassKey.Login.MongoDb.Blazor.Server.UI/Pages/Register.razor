@@ -61,6 +61,7 @@
     List<Users> Users = new List<Users>();
     List<Companies> Companies = new List<Companies>();
     Dictionary<string, string> userGroups = new Dictionary<string, string>();
+    Users UserExists = new Users();
 
     protected override async Task OnInitializedAsync()
     {
@@ -132,10 +133,11 @@
     // Method to connect users with the same phone number.
     private async Task ConnectUsersWithSamePhoneNumber(string phoneNumber)
     {
-        if (userGroups.ContainsKey(phoneNumber))
+        UserExists = userService.GetUserByPhone(phoneNumber);
+        if (UserExists!= null)
         {
             // If the phone number already exists in the dictionary, assign the existing group ID to the user.
-            User.GroupID = userGroups[phoneNumber];
+            User.GroupID = UserExists.GroupID;
         }
         else
         {

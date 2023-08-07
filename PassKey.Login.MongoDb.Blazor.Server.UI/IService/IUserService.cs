@@ -8,6 +8,8 @@ namespace PassKey.Login.MongoDb.Blazor.Server.UI.IService
 
         Users GetUser(string uniqueIdentifier);
 
+        Users GetUserByPhone(string phoneNumber);
+
         List<Users> GetUsers();
 
         string Delete(string userId);
