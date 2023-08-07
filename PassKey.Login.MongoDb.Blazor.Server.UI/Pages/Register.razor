@@ -1,16 +1,15 @@
 ﻿@page "/register"
 @using PassKey.Login.MongoDb.Blazor.Server.UI.Data
 @using PassKey.Login.MongoDb.Blazor.Server.UI.Service
+@using MongoDB.Driver
 @inject PassKey.Login.MongoDb.Blazor.Server.UI.IService.IUserService userService
 @inject PassKey.Login.MongoDb.Blazor.Server.UI.IService.ICompaniesService companiesService
 @inject IJSRuntime jsRuntime
 @inject NavigationManager navManager
 @layout EmptyLayout
 
-
-
-
 <h3>Register</h3>
+
 <div class="row">
     <div class="col-md-4">
         <div class="row">
@@ -38,54 +37,46 @@
                     <option value="">Select a Company</option>
                     @foreach (var company in Companies)
                     {
-                        <option value="@company.Id">@company.Name</option>
+                            <option value="@company.Id">@company.Name</option>
                     }
                 </select>
             </div>
         </div>
 
-
         <br />
-
 
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-8">
                 <button class="btn btn-primary" @onclick="@(e => SaveAsync())">Save</button>
-
                 <button class="btn btn-danger" @onclick="@(e => Reset())" style="float:right;">Reset</button>
             </div>
         </div>
-
     </div>
-
 </div>
 
-
 @code {
-
     Users User = new Users();
     Companies Company = new Companies();
     List<Users> Users = new List<Users>();
     List<Companies> Companies = new List<Companies>();
+    Dictionary<string, string> userGroups = new Dictionary<string, string>();
 
     protected override async Task OnInitializedAsync()
     {
         GetUsers();
         await GetCompanies();
     }
+
     private void GetUsers()
     {
         Users = userService.GetUsers();
     }
+
     private async Task GetCompanies()
     {
         Companies = companiesService.GetCompanies();
     }
-    //public Companies GetCompany(string id)
-    //{
-    //    return _companyTable.Find(x => x.Id == id).FirstOrDefault();
-    //}
 
     private async Task SaveAsync()
     {
@@ -104,42 +95,54 @@
         if (containsWindows)
         {
             User.System = "Windows";
-
         }
         else if (containsMac)
         {
             User.System = "macOS";
-
         }
         else if (containsAndroid)
         {
             User.System = "Android";
-
         }
         else if (containsiOS)
         {
             User.System = "iOS";
         }
 
+        // Connect users with the same phone number.
+        await ConnectUsersWithSamePhoneNumber(User.PhoneNumber);
+
         userService.SaveOrUpdate(User);
         Reset();
         GetUsers();
         navManager.NavigateTo("/home");
-
     }
+
     private void Reset()
     {
         User = new Users();
     }
-    //private void Edit(string userId)
-    //{
-    //    User = userService.GetUser(userId);
-    //}
+
     private void Delete(string userId)
     {
         userService.Delete(userId);
         GetUsers();
     }
 
-
+    // Method to connect users with the same phone number.
+    private async Task ConnectUsersWithSamePhoneNumber(string phoneNumber)
+    {
+        if (userGroups.ContainsKey(phoneNumber))
+        {
+            // If the phone number already exists in the dictionary, assign the existing group ID to the user.
+            User.GroupID = userGroups[phoneNumber];
+        }
+        else
+        {
+            // If the phone number is new, create a new group ID and add it to the dictionary.
+            var groupId = Guid.NewGuid().ToString(); // Generate a new GroupID.
+            User.GroupID = groupId;
+            userGroups.Add(phoneNumber, groupId);
+        }
+    }
 }
