@@ -15,6 +15,9 @@
                 @foreach (var use in Users)
                 {
                             <li>@use.Name - @use.System</li>
+                                   
+                                    <button class="btn btn-danger" @onclick="@(e => Delete(@use.Id))">Delete</button>
+                               
                 }
                 </ul>
         }
@@ -40,6 +43,10 @@
 
     }
 
-   
+    private void Delete(string userId)
+    {
+        userService.Delete(User.Id);
+  
+    }
 }
 
