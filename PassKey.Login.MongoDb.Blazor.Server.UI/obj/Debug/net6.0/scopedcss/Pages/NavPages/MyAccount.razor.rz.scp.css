@@ -1,0 +1,17 @@
+.device-container[b-c3hupx1i80] {
+    display: flex;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    width: 30%;
+    height: 150px;
+    padding: 20px;
+    flex-direction: column;
+   
+}
+.device-icon[b-c3hupx1i80]
+{
+    padding-right: 20px;
+}
+
+.current-device[b-c3hupx1i80]{
+    background-color: aqua;
+}

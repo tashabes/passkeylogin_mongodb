@@ -32,16 +32,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2UGFnZXNcR3JhcGgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/NatashaAbel/source/repos/PassKey.Login.MongoDb/PassKey.Login.MongoDb.Blazor.Server.UI/Pages/NavPages/MyAccount.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2UGFnZXNcTXlBY2NvdW50LnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/NatashaAbel/source/repos/PassKey.Login.MongoDb/PassKey.Login.MongoDb.Blazor.Server.UI/Pages/NavPages/Payments.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2UGFnZXNcUGF5bWVudHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/NatashaAbel/source/repos/PassKey.Login.MongoDb/PassKey.Login.MongoDb.Blazor.Server.UI/Pages/NavPages/TimeSheets.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2UGFnZXNcVGltZVNoZWV0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/NatashaAbel/source/repos/PassKey.Login.MongoDb/PassKey.Login.MongoDb.Blazor.Server.UI/Pages/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/NatashaAbel/source/repos/PassKey.Login.MongoDb/PassKey.Login.MongoDb.Blazor.Server.UI/Shared/EmptyLayout.razor]
@@ -60,9 +60,9 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-b0skl1ymxj
 
-[C:/Users/NatashaAbel/source/repos/PassKey.Login.MongoDb/PassKey.Login.MongoDb.Blazor.Server.UI/Pages/Register.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-l51jeygfym
+[C:/Users/NatashaAbel/source/repos/PassKey.Login.MongoDb/PassKey.Login.MongoDb.Blazor.Server.UI/Pages/NavPages/MyAccount.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2UGFnZXNcTXlBY2NvdW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-c3hupx1i80
 
 [C:/Users/NatashaAbel/source/repos/PassKey.Login.MongoDb/PassKey.Login.MongoDb.Blazor.Server.UI/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=

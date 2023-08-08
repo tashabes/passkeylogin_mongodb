@@ -155,6 +155,24 @@ footer[b-b0skl1ymxj] {
     font-size: 18px;
     font-weight: bold;
 }
+/* _content/PassKey.Login.MongoDb.Blazor.Server.UI/Pages/NavPages/MyAccount.razor.rz.scp.css */
+.device-container[b-c3hupx1i80] {
+    display: flex;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    width: 30%;
+    height: 150px;
+    padding: 20px;
+    flex-direction: column;
+   
+}
+.device-icon[b-c3hupx1i80]
+{
+    padding-right: 20px;
+}
+
+.current-device[b-c3hupx1i80]{
+    background-color: aqua;
+}
 /* _content/PassKey.Login.MongoDb.Blazor.Server.UI/Shared/MainLayout.razor.rz.scp.css */
 .page[b-tk5888bvpd] {
     position: relative;

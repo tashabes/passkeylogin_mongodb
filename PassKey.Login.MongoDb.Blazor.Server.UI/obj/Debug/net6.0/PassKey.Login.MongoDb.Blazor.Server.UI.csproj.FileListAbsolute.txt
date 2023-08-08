@@ -61,3 +61,4 @@ C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Bl
 C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\bin\Debug\net6.0\Syncfusion.Licensing.dll
 C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\bin\Debug\net6.0\Syncfusion.PdfExport.Net.dll
 C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\Users\NatashaAbel\source\repos\PassKey.Login.MongoDb\PassKey.Login.MongoDb.Blazor.Server.UI\obj\Debug\net6.0\scopedcss\Pages\NavPages\MyAccount.razor.rz.scp.css

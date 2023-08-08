@@ -1,0 +1,17 @@
+﻿.device-container {
+    display: flex;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    width: 30%;
+    height: 150px;
+    padding: 20px;
+    flex-direction: column;
+   
+}
+.device-icon
+{
+    padding-right: 20px;
+}
+
+.current-device{
+    background-color: aqua;
+}
