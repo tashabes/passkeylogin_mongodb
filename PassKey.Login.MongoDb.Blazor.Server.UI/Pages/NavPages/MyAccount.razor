@@ -14,10 +14,15 @@
                 <ul>
                 @foreach (var use in Users)
                 {
-                            <li>@use.Name - @use.System</li>
-                                   
-                               
-                }
+                            <li>@if(@use.System == "Windows" || @use.System == "Mac")
+                                {
+                                    <span class="oi oi-monitor"/>
+                                }
+                                else{
+                                    <span class="oi oi-phone"/>
+                                }
+                                @use.System</li>
+                 }
                 </ul>
         }
         else
@@ -25,7 +30,7 @@
                 <p>No users found with this GroupID.</p>
         }
     </div>
-</div>
+    </div>
 
 @code {
     List<Users> Users = new List<Users>();
