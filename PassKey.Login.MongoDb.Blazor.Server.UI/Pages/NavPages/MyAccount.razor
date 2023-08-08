@@ -2,6 +2,7 @@
 @using PassKey.Login.MongoDb.Blazor.Server.UI.Data
 @using PassKey.Login.MongoDb.Blazor.Server.UI.Service
 @inject PassKey.Login.MongoDb.Blazor.Server.UI.IService.IUserService userService
+@inject NavigationManager navManager
 @inject IJSRuntime jsRuntime
 
 
@@ -24,10 +25,16 @@
                                 }
                                 @use.System</h4>
 
-                                <div class="current-device">@if(User.System == use.System)
+                                <div class="device-actions">
+                                    <div class="current-device">
+                                    @if(User.System == use.System)
                                     {<h5>Current Device</h5>}
+                                    </div>
+                                    <div><button class="btn btn-danger" @onclick="@(e => Delete(@use.Id))">Delete</button></div>
+                                    </div>
                                 </div>
-                                          </div>
+
+                                        
                  }
               
         }
@@ -56,6 +63,7 @@
     private void Delete(string userId)
     {
         userService.Delete(User.Id);
+        navManager.NavigateTo("/register");
 
     }
 }

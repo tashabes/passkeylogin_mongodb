@@ -13,11 +13,19 @@
     padding-right: 20px;
 }
 
+.device-actions[b-c3hupx1i80] {
+    display: flex;
+    
+    
+}
+
 .current-device[b-c3hupx1i80] {
-    display: inline-block;
     background-color: lightblue;
-    padding: 0px 5px;
+    padding: 3px;
     width: max-content;
     border-radius: 5px;
+    margin: auto;
+    flex-direction: row;
+    
 }
 
