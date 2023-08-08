@@ -2,9 +2,10 @@
     display: flex;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
     width: 30%;
-    height: 150px;
+    height: 100px;
     padding: 20px;
     flex-direction: column;
+    margin-bottom: 30px;
    
 }
 .device-icon
@@ -12,6 +13,11 @@
     padding-right: 20px;
 }
 
-.current-device{
-    background-color: aqua;
+.current-device {
+    display: inline-block;
+    background-color: lightblue;
+    padding: 0px 5px;
+    width: max-content;
+    border-radius: 5px;
 }
+
