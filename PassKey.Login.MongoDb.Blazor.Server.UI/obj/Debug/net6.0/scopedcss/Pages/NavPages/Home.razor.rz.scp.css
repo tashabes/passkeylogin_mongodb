@@ -87,14 +87,14 @@ footer[b-b0skl1ymxj] {
 .grid-item[b-b0skl1ymxj] {
     display: flex;
     flex-direction: column;
-    border-radius: 6px;  
-
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .grid-graph[b-b0skl1ymxj] {
     grid-column: 1/3;
     grid-row: 1/3;
-   
+    padding: 10px;
 }
 .grid-box-jobs[b-b0skl1ymxj] {
     grid-column: 3/4;

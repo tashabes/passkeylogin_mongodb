@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "U3Ri8Yzhps3pBEJYHvpOFwSioNBT3zNtPvGCjo2xGlA=",
+  "Hash": "91qnvrvBfHyCygt5O63aic11K8NdW77BkLXV51Vu3vY=",
   "Source": "PassKey.Login.MongoDb.Blazor.Server.UI",
   "BasePath": "_content/PassKey.Login.MongoDb.Blazor.Server.UI",
   "Mode": "Default",
@@ -746,6 +746,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\amazon.png"
+    },
+    {
+      "Identity": "C:\\Users\\NatashaAbel\\source\\repos\\PassKey.Login.MongoDb\\PassKey.Login.MongoDb.Blazor.Server.UI\\wwwroot\\images\\Revolut_logo.png",
+      "SourceId": "PassKey.Login.MongoDb.Blazor.Server.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\NatashaAbel\\source\\repos\\PassKey.Login.MongoDb\\PassKey.Login.MongoDb.Blazor.Server.UI\\wwwroot\\",
+      "BasePath": "_content/PassKey.Login.MongoDb.Blazor.Server.UI",
+      "RelativePath": "images/Revolut_logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Revolut_logo.png"
     },
     {
       "Identity": "C:\\Users\\NatashaAbel\\source\\repos\\PassKey.Login.MongoDb\\PassKey.Login.MongoDb.Blazor.Server.UI\\wwwroot\\js\\chart.js",

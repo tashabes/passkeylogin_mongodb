@@ -1,0 +1,135 @@
+﻿.page-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.main-content {
+    display: flex;
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+}
+
+.left-section {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.right-section {
+    flex: 1;
+    border-left: 1px solid #ccc;
+    padding-left: 20px;
+}
+
+.balance-banner {
+    background: linear-gradient(to top right, #CE1FB7, #014BB7);
+    padding: 20px;
+   font-weight: bold;
+    color: white;
+    border-radius: 5px;
+}
+.available-balance {
+    font-size: 24px;
+    color: white;
+}
+.receiver-section {
+    margin-top: 20px;
+}
+
+.receiver-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.receiver-circle {
+    width: 80px;
+    height: 80px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.add-receiver {
+    background-color: #007bff;
+    color: white;
+}
+
+.receiver-name {
+    font-size: 14px;
+    margin-top: 5px;
+    align-items: center;
+}
+
+.send-payment-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.input-column {
+    flex: 1;
+    padding: 20px;
+}
+
+.card-image {
+  
+    background: linear-gradient(to top right, #CE1FB7, #014BB7);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    width: 320px; 
+    height: 200px;
+    color: white;
+}
+
+    .card-image img {
+        max-width: 100px;
+       
+    }
+
+    .card-user{
+       
+    }
+
+.transaction-list {
+    width: 300px;
+    padding: 20px;
+    
+}
+
+.transaction-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.transaction-date {
+    font-size: 12px;
+    color: #777;
+}
+
+.transaction-amount {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.positive {
+    color: green;
+}
+
+.negative {
+    color: red;
+}
+
+.transaction-description {
+    font-size: 12px;
+    color: #555;
+}

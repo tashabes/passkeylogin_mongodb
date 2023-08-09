@@ -1,7 +1,97 @@
 ﻿@page "/payments"
+@using PassKey.Login.MongoDb.Blazor.Server.UI.Data;
+@inject PassKey.Login.MongoDb.Blazor.Server.UI.IService.IUserService userService
+@inject IJSRuntime jsRuntime
 
-<h3>Payments</h3>
+<div class="page-container">
+<div class="main-content">
+<div class="left-section">
+<div class="balance-banner">
+    <h2 class="available-balance">£1,234</h2>
+    <p>Your Available Balance</p>
+    
+</div>
+
+<div class="receiver-section">
+    <h3>Choose Receiver</h3>
+    <div class="receiver-list">
+        <div>
+        <div class="receiver-circle oi oi-plus"></div>
+            <p class="receiver-name"></p>
+        </div>
+        <!-- Repeat the following for each receiver -->
+          <div>
+        <div class="receiver-circle oi oi-person"></div>
+            <p class="receiver-name"></p>
+        </div>
+           <div>
+        <div class="receiver-circle oi oi-person"></div>
+            <p class="receiver-name"></p>
+        </div>
+           <div>
+        <div class="receiver-circle oi oi-person"></div>
+            <p class="receiver-name"></p>
+        </div>
+          <div>
+        <div class="receiver-circle oi oi-person"></div>
+            <p class="receiver-name"></p>
+        </div>
+    </div>
+</div>
+
+<div class="send-payment-section">
+    <div class="input-column">
+        <label>Amount</label>
+        <input type="text" />
+        <label>Reference</label>
+        <input type="text" />
+        <label>Date</label>
+        <input type="text" />
+    </div>
+    <div class="card-image">
+        <img src="images/Revolut_logo.png" alt="Revolut logo" />
+        <div class="card-user">
+        <p>@user.Name</p>
+       
+        <p>1234 4567 1234 4567</p>
+        <p>02/27</p>
+        </div>
+    </div>
+</div>
+</div>
+<div class="right-section">
+ <div class="transaction-list">
+            <h3>Transaction History</h3>
+            <div class="transaction-item">
+                <p class="transaction-date">2023-08-01</p>
+                <p class="transaction-amount positive">+£100</p>
+                <p class="transaction-description">Received payment</p>
+            </div>
+            <div class="transaction-item">
+                <p class="transaction-date">2023-07-28</p>
+                <p class="transaction-amount negative">-£50</p>
+                <p class="transaction-description">Online purchase</p>
+            </div>
+            <!-- Add more transaction items here -->
+        </div>
+   </div>
+   </div>
+   </div>
+
 
 @code {
+    Users user = new Users();
+ 
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        string uniqueIdentifier = await jsRuntime.InvokeAsync<string>("localStorage.getItem", "userUniqueIdentifier");
+        user = userService.GetUser(uniqueIdentifier);
+       
+
+    }
+
 
 }
