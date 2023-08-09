@@ -1,7 +1,123 @@
 ﻿@page "/timesheets"
+@inject PassKey.Login.MongoDb.Blazor.Server.UI.IService.IUserService userService
+@using PassKey.Login.MongoDb.Blazor.Server.UI.Data
+@using PassKey.Login.MongoDb.Blazor.Server.UI.Service
 
 <h3>TimeSheets</h3>
 
-@code {
 
+
+<div class="col-md-8">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Clock In</th>
+                <th>Clock Out</th>
+               
+                <th>Total</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @if (Users.Count() > 0)
+            {
+                @foreach (var use in Users)
+                {
+                            <tr>
+                                <td>@use.Id</td>
+                                <td>@use.Name</td>
+                                <td>07/08/2023</td>
+                                <td>Work from Home</td>
+                                <td>
+                                      <select>
+                                <option value="08:00 AM">08:00 AM</option>
+                                <option value="09:00 AM">09:00 AM</option>
+                                <option value="10:00 AM">10:00 AM</option>
+                                <option value="11:00 AM">11:00 AM</option>
+                                <option value="12:00 PM">12:00 PM</option>
+                                <option value="13:00 PM">13:00 PM</option>
+                                <option value="12:00 PM">14:00 PM</option>
+                                <option value="13:00 PM">15:00 PM</option>
+
+                               
+                            </select>
+
+                                </td>
+                                        <td>       
+                                         <select >
+                                        <option value="12:00 PM">12:00 PM</option>
+                                        <option value="13:00 PM">13:00 PM</option>
+                                        <option value="14:00 PM">14:00 PM</option>
+                                        <option value="15:00 PM">15:00 PM</option>
+                                        <option value="16:00 PM">16:00 PM</option>
+                                        <option value="17:00 PM">17:00 PM</option>
+                                        <option value="18:00 PM">18:00 PM</option>
+                                        <option value="19:00 PM">19:00 PM</option>
+
+
+                                    </select></td>
+                                
+                                <td>@employee.TotalHours</td>
+                                <td>
+                         
+                            <button class="btn btn-danger" @*@onclick="@(e => Appove)*@">Approve</button>
+                                </td>
+                            </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+</div>
+
+
+@code {
+    Employees employee = new Employees();
+    Users User = new Users();
+    List<Users> Users = new List<Users>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        GetUsers();
+    }
+    private void GetUsers()
+    {
+        Users = userService.GetUsers();
+    }
+    private void Save()
+    {
+        userService.SaveOrUpdate(User);
+        Reset();
+        GetUsers();
+    }
+    private void Reset()
+    {
+        User = new Users();
+    }
+    //private void Edit(string userId)
+    //{
+    //    User = userService.GetUser(userId);
+    //}
+    private void Delete(string userId)
+    {
+        userService.Delete(userId);
+        GetUsers();
+    }
+    private void Approve()
+    {
+
+    }
+
+    private void CalculateTotalHours(Users user)
+    {
+        var clockInTime = TimeSpan.Parse(user.ClockIn);
+        var clockOutTime = TimeSpan.Parse(user.ClockOut);
+        var timeDifference = clockOutTime - clockInTime;
+        user.TotalHours = timeDifference.TotalHours;
+    }
 }
+
