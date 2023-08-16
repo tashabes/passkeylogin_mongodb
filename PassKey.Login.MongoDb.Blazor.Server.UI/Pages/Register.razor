@@ -8,49 +8,111 @@
 @inject NavigationManager navManager
 @layout EmptyLayout
 
-<h3>Register</h3>
 
-<div class="row">
-    <div class="col-md-4">
-        <div class="row">
-            <div class="col-md-4">
-                <label>Name:</label>
-            </div>
-            <div class="col-md-8">
-                <input @bind="User.Name" style="width:100%;" placeholder="Name" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <label>Phone Number:</label>
-            </div>
-            <div class="col-md-8">
-                <input @bind="User.PhoneNumber" style="width:100%;" placeholder="Phone Number" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <label>Company:</label>
-            </div>
-            <div class="col-md-8">
-                <select @bind="User.CompanyId" style="width:100%;">
+<div class="page-container">
+    <div class="left-section">
+        <div class="register">
+            <img src="images/Goowid.png" alt="Goowid logo" class="logo" />
+
+            <h3>Register with Goowid</h3>
+            <p>Set up your Goowid account with just your phone number</p>
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    @* <div class="row">
+                    <div class="col-md-4">
+                    <label>Name:</label>
+                    </div>
+                    <div class="col-md-8">
+                    <input @bind="User.Name" style="width:100%;" placeholder="Name" />
+                    </div>
+                    </div>*@
+                    <div class="input-wrapper">
+                        <label for="first">Phone Number</label>
+                        <input @bind="User.PhoneNumber" style="width=100%" />
+                    </div>
+                    @*  <div class="row">
+                    <div class="col-md-4">
+                    <label>Company:</label>
+                    </div>
+                    <div class="col-md-8">
+                    <select @bind="User.CompanyId" style="width:100%;">
                     <option value="">Select a Company</option>
                     @foreach (var company in Companies)
                     {
-                            <option value="@company.Id">@company.Name</option>
+                    <option value="@company.Id">@company.Name</option>
                     }
-                </select>
+                    </select>
+                    </div>
+                    </div>*@
+
+                    <br />
+
+                    <div class="row">
+
+                        <div>
+                            <button class="btn btn-primary" @onclick="@(e => RegisterWithCodeAsync())">Register</button>
+                            @*  <button class="btn btn-danger" @onclick="@(e => Reset())" style="float:right;">Reset</button>*@
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="right-section">
+        <div class="right-container">
+            <h2>Get started with Goowid</h2>
+            <img src="images/dashboard.png" alt="dashboard" />
 
-        <br />
-
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-8">
-                <button class="btn btn-primary" @onclick="@(e => SaveAsync())">Save</button>
-                <button class="btn btn-danger" @onclick="@(e => Reset())" style="float:right;">Reset</button>
+            <div class="benefits-list">
+                <h3 class=white-text>Benefits</h3>
+                <div class="oi oi-circle-check benefits"></div><span class="benefits">Keep your data secure</span>
+                <br />
+                <div class="oi oi-circle-check benefits"></div><span class="benefits">Instant timesheets</span>
+                <br />
+                <div class="oi oi-circle-check benefits"></div><span class="benefits">Quick payments</span>
             </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="modal" style="display: @codeModalDisplay">
+    <div class="modal-box">
+        <div class="modal-content">
+            <h2 class="prompt">Enter Your Code</h2>
+            <p class="prompt">Enter the codes generated on your mobile device below to log in!</p>
+            <div class="input-container digit-group">
+                <input @bind="providedCodes[0]" />
+                <span class="splitter">&ndash;</span>
+                <input @bind="providedCodes[1]" />
+                <span class="splitter">&ndash;</span>
+                <input @bind="providedCodes[2]"  />
+                <span class="splitter">&ndash;</span>
+                <input @bind="providedCodes[3]"  />
+            </div>
+            <button @onclick="@(e => SubmitCodes())">Submit</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" style="display: @ModalDisplay">
+    <div class="modal-box">
+        <div class="modal-content">
+            <h2 class="prompt">Welcome to Goowid</h2>
+            <p class="prompt">Tell us a little about yourself!</p>
+            <div class="input-container-text">
+                <div class="input-group-text">
+                    <label class="input-group-text-label">Name:</label>
+                <input @bind="User.Name" />
+                </div>
+                <div class="input-group-text">
+                    <label class="input-group-text-label">Company:</label>
+                <input @bind="User.CompanyName" />
+                </div>
+            </div>
+            <button @onclick="@(e => SaveAsync())">Register</button>
         </div>
     </div>
 </div>
@@ -62,6 +124,47 @@
     List<Companies> Companies = new List<Companies>();
     Dictionary<string, string> userGroups = new Dictionary<string, string>();
     Users UserExists = new Users();
+
+    string codeModalDisplay = "none"; // Initial modal display state
+    string ModalDisplay = "none"; // Initial modal display state
+    string providedCode = "";
+    string[] providedCodes = new string[4];
+
+    private async Task RegisterWithCodeAsync()
+    {
+        codeModalDisplay = "block";
+
+    }
+
+    private async Task WelcomeNewUser()
+    {
+        ModalDisplay = "block";
+    }
+
+    private async Task SubmitCodes()
+    {
+        string expectedCode1 = "1"; // Replace with your expected codes
+        string expectedCode2 = "2";
+        string expectedCode3 = "3";
+        string expectedCode4 = "4";
+
+        if (providedCodes[0] == expectedCode1 &&
+            providedCodes[1] == expectedCode2 &&
+            providedCodes[2] == expectedCode3 &&
+            providedCodes[3] == expectedCode4)
+        {
+            // The user entered the correct codes, proceed with registration.
+            await ConnectUsersWithSamePhoneNumber(User.PhoneNumber);
+        }
+        else
+        {
+            // Display an error message or perform any other action.
+            await jsRuntime.InvokeVoidAsync("alert", "Invalid codes. Please try again.");
+        }
+
+        // Hide the custom modal
+        codeModalDisplay = "none";
+    }
 
     protected override async Task OnInitializedAsync()
     {
@@ -81,17 +184,20 @@
 
     private async Task SaveAsync()
     {
+
         User.SystemDetail = await jsRuntime.InvokeAsync<string>("getUserAgent");
         User.OperatingSystem = await jsRuntime.InvokeAsync<string>("getClientOS");
         User.UniqueIdentifier = await jsRuntime.InvokeAsync<string>("uuidInterop.getUUID");
         await jsRuntime.InvokeVoidAsync("localStorage.setItem", "userUniqueIdentifier", User.UniqueIdentifier);
         User.IPAddress = await jsRuntime.InvokeAsync<string>("ipAddressInterop.getClientIPAddress");
-        Company = companiesService.GetCompany(User.CompanyId);
-        User.CompanyName = Company.Name;
+        //Company = companiesService.GetCompany(User.CompanyId);
+        //User.CompanyName = Company.Name;
         bool containsMac = User.SystemDetail.Contains("Macintosh");
         bool containsWindows = User.SystemDetail.Contains("Windows");
         bool containsAndroid = User.SystemDetail.Contains("Android");
         bool containsiOS = User.SystemDetail.Contains("iPhone");
+
+
 
         if (containsWindows)
         {
@@ -111,7 +217,7 @@
         }
 
         // Connect users with the same phone number.
-        await ConnectUsersWithSamePhoneNumber(User.PhoneNumber);
+        //await ConnectUsersWithSamePhoneNumber(User.PhoneNumber);
 
         userService.SaveOrUpdate(User);
         Reset();
@@ -134,17 +240,26 @@
     private async Task ConnectUsersWithSamePhoneNumber(string phoneNumber)
     {
         UserExists = userService.GetUserByPhone(phoneNumber);
-        if (UserExists!= null)
+        if (UserExists != null)
         {
             // If the phone number already exists in the dictionary, assign the existing group ID to the user.
             User.GroupID = UserExists.GroupID;
+            User.Name = UserExists.Name;
+            User.CompanyName = UserExists.CompanyName;
+            SaveAsync();
         }
         else
         {
+
+
             // If the phone number is new, create a new group ID and add it to the dictionary.
             var groupId = Guid.NewGuid().ToString(); // Generate a new GroupID.
             User.GroupID = groupId;
+
+            await WelcomeNewUser();
+          
             userGroups.Add(phoneNumber, groupId);
+
         }
     }
 }

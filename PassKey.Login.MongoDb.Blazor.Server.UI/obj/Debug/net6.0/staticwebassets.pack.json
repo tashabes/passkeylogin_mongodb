@@ -61,12 +61,20 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\NatashaAbel\\source\\repos\\PassKey.Login.MongoDb\\PassKey.Login.MongoDb.Blazor.Server.UI\\wwwroot\\images\\Goowid.png",
+      "PackagePath": "staticwebassets\\images\\Goowid.png"
+    },
+    {
       "Id": "C:\\Users\\NatashaAbel\\source\\repos\\PassKey.Login.MongoDb\\PassKey.Login.MongoDb.Blazor.Server.UI\\wwwroot\\images\\Revolut_logo.png",
       "PackagePath": "staticwebassets\\images\\Revolut_logo.png"
     },
     {
       "Id": "C:\\Users\\NatashaAbel\\source\\repos\\PassKey.Login.MongoDb\\PassKey.Login.MongoDb.Blazor.Server.UI\\wwwroot\\images\\amazon.png",
       "PackagePath": "staticwebassets\\images\\amazon.png"
+    },
+    {
+      "Id": "C:\\Users\\NatashaAbel\\source\\repos\\PassKey.Login.MongoDb\\PassKey.Login.MongoDb.Blazor.Server.UI\\wwwroot\\images\\dashboard.png",
+      "PackagePath": "staticwebassets\\images\\dashboard.png"
     },
     {
       "Id": "C:\\Users\\NatashaAbel\\source\\repos\\PassKey.Login.MongoDb\\PassKey.Login.MongoDb.Blazor.Server.UI\\wwwroot\\js\\chart.js",

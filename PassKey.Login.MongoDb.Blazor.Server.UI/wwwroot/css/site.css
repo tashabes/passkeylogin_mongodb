@@ -1,11 +1,22 @@
 @import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
 html, body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 h1:focus {
     outline: none;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 12px;
+    color: grey;
+    font-family: 'Lora', sans-serif;
 }
 
 a, .btn-link {
@@ -62,3 +73,5 @@ a, .btn-link {
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+

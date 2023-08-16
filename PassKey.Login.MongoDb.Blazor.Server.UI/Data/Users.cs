@@ -2,7 +2,7 @@
 
 namespace PassKey.Login.MongoDb.Blazor.Server.UI.Data
 {
- 
+
     public class Users
     {
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]

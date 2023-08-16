@@ -7,11 +7,11 @@
 
 <style>
     .sidebar {
-        background-color: @company.Color   
+        background-color: #1DBED0 
     }
 
     .user-initial-circle {
-        background-color: @company.Color
+        background-color: #1DBED0
     }
 
 
@@ -58,7 +58,7 @@
             if (user != null)
             {
                 userInitial = user.Name.Substring(0, 1);
-                company = companiesService.GetCompany(user.CompanyId);
+                //company = companiesService.GetCompany(user.CompanyId);
             }
             // Mark the data as loaded to prevent subsequent calls.
             isLoaded = true;

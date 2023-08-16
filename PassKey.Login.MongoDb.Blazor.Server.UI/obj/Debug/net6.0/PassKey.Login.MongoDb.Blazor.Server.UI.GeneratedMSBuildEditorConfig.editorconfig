@@ -20,6 +20,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/NatashaAbel/source/repos/PassKey.Login.MongoDb/PassKey.Login.MongoDb.Blazor.Server.UI/Components/ModalDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNb2RhbERpYWxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/NatashaAbel/source/repos/PassKey.Login.MongoDb/PassKey.Login.MongoDb.Blazor.Server.UI/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -34,10 +38,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/NatashaAbel/source/repos/PassKey.Login.MongoDb/PassKey.Login.MongoDb.Blazor.Server.UI/Pages/NavPages/TimeSheets.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2UGFnZXNcVGltZVNoZWV0cy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/NatashaAbel/source/repos/PassKey.Login.MongoDb/PassKey.Login.MongoDb.Blazor.Server.UI/Pages/Register.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/NatashaAbel/source/repos/PassKey.Login.MongoDb/PassKey.Login.MongoDb.Blazor.Server.UI/Shared/EmptyLayout.razor]
@@ -63,6 +63,10 @@ build_metadata.AdditionalFiles.CssScope = b-c3hupx1i80
 [C:/Users/NatashaAbel/source/repos/PassKey.Login.MongoDb/PassKey.Login.MongoDb.Blazor.Server.UI/Pages/NavPages/Payments.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2UGFnZXNcUGF5bWVudHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-lhx34pritl
+
+[C:/Users/NatashaAbel/source/repos/PassKey.Login.MongoDb/PassKey.Login.MongoDb.Blazor.Server.UI/Pages/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-l51jeygfym
 
 [C:/Users/NatashaAbel/source/repos/PassKey.Login.MongoDb/PassKey.Login.MongoDb.Blazor.Server.UI/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=

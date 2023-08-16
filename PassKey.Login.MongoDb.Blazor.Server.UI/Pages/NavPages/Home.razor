@@ -8,12 +8,12 @@
 <style>
     footer
     {
-        background-color: @company.Color   
+        background-color: #1DBED0
     }
 
     .dashboard-icon
     {
-        background-color: @company.Color
+        background-color: #1DBED0
     }
 </style>
 
@@ -73,22 +73,21 @@
             </div>
             <div class="grid-item grid-box-news">
                 <h4>Company News</h4>
-                <p>@company.Name supporting Amazon's new Christmas recuitment campaign.</p>
+                <p>We are supporting Amazon's new Christmas recuitment campaign.</p>
 
             </div>
         
         </div>
     </main>
 <footer>
-    <h5>@company.Name</h5>
-    <h5>@company.Address</h5>
-    <h5>@company.PhoneNumber</h5>
+   <h6> © 2019 Goowid Ltd | Privacy Policy | Terms & Conditions</h6>
+ 
 </footer>
 </body>
 @code {
 
     Users user = new Users();
-    Companies company = new Companies();
+    //Companies company = new Companies();
 
 
     protected override async Task OnInitializedAsync()
@@ -96,7 +95,7 @@
 
         string uniqueIdentifier = await jsRuntime.InvokeAsync<string>("localStorage.getItem", "userUniqueIdentifier");
         user = userService.GetUser(uniqueIdentifier);
-        company = companiesService.GetCompany(user.CompanyId);
+        //company = companiesService.GetCompany(user.CompanyId);
 
     }
 
