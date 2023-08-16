@@ -77,6 +77,10 @@
       "PackagePath": "staticwebassets\\images\\dashboard.png"
     },
     {
+      "Id": "C:\\Users\\NatashaAbel\\source\\repos\\PassKey.Login.MongoDb\\PassKey.Login.MongoDb.Blazor.Server.UI\\wwwroot\\js\\ChartJsInterop.js",
+      "PackagePath": "staticwebassets\\js\\ChartJsInterop.js"
+    },
+    {
       "Id": "C:\\Users\\NatashaAbel\\source\\repos\\PassKey.Login.MongoDb\\PassKey.Login.MongoDb.Blazor.Server.UI\\wwwroot\\js\\chart.js",
       "PackagePath": "staticwebassets\\js\\chart.js"
     },

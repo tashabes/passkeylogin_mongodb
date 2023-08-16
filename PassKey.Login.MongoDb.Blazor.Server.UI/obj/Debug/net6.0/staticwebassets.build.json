@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MkxGIBeT5jxBdJzAfzsrOUGR44s/7K5dv2bwfrY2gIs=",
+  "Hash": "GaYQmKj4Sltjr9JdiRtNf4YX8RBbwYninyQhd4HEvP8=",
   "Source": "PassKey.Login.MongoDb.Blazor.Server.UI",
   "BasePath": "_content/PassKey.Login.MongoDb.Blazor.Server.UI",
   "Mode": "Default",
@@ -814,6 +814,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\chart.js"
+    },
+    {
+      "Identity": "C:\\Users\\NatashaAbel\\source\\repos\\PassKey.Login.MongoDb\\PassKey.Login.MongoDb.Blazor.Server.UI\\wwwroot\\js\\ChartJsInterop.js",
+      "SourceId": "PassKey.Login.MongoDb.Blazor.Server.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\NatashaAbel\\source\\repos\\PassKey.Login.MongoDb\\PassKey.Login.MongoDb.Blazor.Server.UI\\wwwroot\\",
+      "BasePath": "_content/PassKey.Login.MongoDb.Blazor.Server.UI",
+      "RelativePath": "js/ChartJsInterop.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\ChartJsInterop.js"
     },
     {
       "Identity": "C:\\Users\\NatashaAbel\\source\\repos\\PassKey.Login.MongoDb\\PassKey.Login.MongoDb.Blazor.Server.UI\\wwwroot\\js\\clientName.js",
